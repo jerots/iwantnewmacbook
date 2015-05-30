@@ -7,7 +7,7 @@ $("#dialog").hide();
 $(document).ready(function() {
 	
 	
-	$("#thebutton").click(function(){
+	$("#thebutton,#thesubmit").click(function(){
 		$("#dialog").slideToggle(300);
 		//$("#dialog").show(300);
 		$("#overlay").toggleClass("toLay");
