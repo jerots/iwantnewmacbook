@@ -4,22 +4,13 @@
  * and open the template in the editor.
  */
 $("#dialog").hide();
+$("#overlay").hide();
 $(document).ready(function() {
 	
 	
 	$("#thebutton,#thesubmit").click(function(){
 		$("#dialog").slideToggle(300);
-		//$("#dialog").show(300);
-		$("#overlay").toggleClass("toLay");
-		//$("#overlay").removeClass("toLay");
-		
+		$("#overlay").toggle();
 	});
 	
-	/*
-	$("*").not("#dialog").click(function(){
-		
-		$("#dialog").hide(300);
-		$("#overlay").addClass("toLay");
-	});
-	*/
 });
