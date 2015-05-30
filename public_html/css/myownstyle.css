@@ -22,16 +22,21 @@ img {
 	
 }
 
-dialog{
+#dialog{
 	background-color: whitesmoke;
 	position: fixed;
-	top:10%;
+	left: 50%;
+	margin-left: -250px;
+	right: 50%;
+	top: 20%;
 	opacity: 0.95;
-	//left:30%;
 	
+	padding: 15px;
+	border:solid black;
 	width: 500px;
-	
+
 }
+
 
 #thesubmit{
 
