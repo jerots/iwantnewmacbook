@@ -15,7 +15,7 @@ img {
 
 #thebutton{
 	
-	position: absolute;
+	position: fixed;
 	right: 2%;
 	top:2%;
 	z-index:1;
@@ -23,11 +23,21 @@ img {
 }
 
 dialog{
+	background-color: whitesmoke;
 	position: fixed;
 	top:10%;
+	opacity: 0.95;
+	//left:30%;
+	
+	width: 500px;
 	
 }
 
+#thesubmit{
+
+	padding: 10px;
+	margin: 20px 150px auto;
+}
 
 #thebutton{
 	
