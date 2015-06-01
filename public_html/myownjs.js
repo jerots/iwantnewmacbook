@@ -56,17 +56,18 @@ function loadJSON(){
 	if (text != null){
 		text += ']}';
 		var obj = JSON.parse(text);
-		
+		var total = 0;
 		var html = '<table class="table table-striped table-bordered table-hover">';
 		html += '<tr><td>#</td><td>Expenses</td><td>Amount</td></tr>';
 		for (i = 0; i < obj.expenses.length; i++){
-			
+			total += parseInt(obj.expenses[i].amount);
 			html += "<tr>";
 			html += "<td>" + (i + 1) + "</td>";
-			html += "<td>" + obj.expenses[i].expense + "</td><td> " + obj.expenses[i].amount + "</td>";
+			html += "<td>" + obj.expenses[i].expense + "</td><td> $" + obj.expenses[i].amount + "</td>";
 			html += '<td>Edit and Delete buttons coming soon</td>';
 			html += "</tr>";
 		}
+		html += '<tr><td>Total: </td><td></td><td>$' + total + '</td></tr>';
 		html += "</table>";
 		$("article").html(html);
 		/*for (i = 0; i < obj.expenses.length; i++){
