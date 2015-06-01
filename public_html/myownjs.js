@@ -46,6 +46,8 @@ function newExpenseJSON(){
 	//text += ']}';
 	//var obj = JSON.parse(text);
 	localStorage.setItem ('expenses', text);
+	//$("#article").load($(document.URL +  " #article"));
+	//window.setTimeout(countdown, 0);
 	
 }
 
@@ -54,10 +56,23 @@ function loadJSON(){
 	if (text != null){
 		text += ']}';
 		var obj = JSON.parse(text);
+		
+		var html = '<table class="table table-striped table-bordered table-hover">';
+		html += '<tr><td>#</td><td>Expenses</td><td>Amount</td></tr>';
 		for (i = 0; i < obj.expenses.length; i++){
+			
+			html += "<tr>";
+			html += "<td>" + (i + 1) + "</td>";
+			html += "<td>" + obj.expenses[i].expense + "</td><td> " + obj.expenses[i].amount + "</td>";
+			html += '<td>Edit and Delete buttons coming soon</td>';
+			html += "</tr>";
+		}
+		html += "</table>";
+		$("article").html(html);
+		/*for (i = 0; i < obj.expenses.length; i++){
 			$("article").append(obj.expenses[i].expense + ": " + obj.expenses[i].amount);
 			$("article").append("<br>");
-		}
+		}*/
 	}
 }
 
