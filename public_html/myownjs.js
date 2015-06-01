@@ -5,6 +5,8 @@
  */
 $("#dialog").hide();
 $("#overlay").hide();
+
+
 $(document).ready(function() {
 	load();
 	
@@ -25,10 +27,12 @@ function newExpense(){
 }
 
 function load(){
-	
-	var expenseName = localStorage.getItem('amount');
-	//if (expenseName){
-		document.getElementById('article').innerHTML = expenseName;
-	//}
+	var expenseNum = (localStorage.length -2) / 2;
+	for (i = 0; i < expenseNum; i++){
+		
+		var expenseName = localStorage.getItem('expense' + i);
+		var expenseAmt = localStorage.getItem('amount' + i);
+		$('article').append(expenseName + ": " + expenseAmt + "<br>");
+	}
 	
 }
