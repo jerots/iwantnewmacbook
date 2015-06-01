@@ -6,7 +6,7 @@
 $("#dialog").hide();
 $("#overlay").hide();
 $(document).ready(function() {
-	
+	load();
 	
 	$("#thebutton,#thesubmit").click(function(){
 		$("#dialog").slideToggle(300);
@@ -14,3 +14,21 @@ $(document).ready(function() {
 	});
 	
 });
+
+function newExpense(){
+	var expenseNum = (localStorage.length -2) / 2;
+	var expenseName = document.getElementById("thefield").value;
+	var amount = document.getElementById("theamount").value;
+	localStorage.setItem('expense' + expenseNum, expenseName);
+	localStorage.setItem('amount' + expenseNum, amount);
+	
+}
+
+function load(){
+	
+	var expenseName = localStorage.getItem('amount');
+	//if (expenseName){
+		document.getElementById('article').innerHTML = expenseName;
+	//}
+	
+}
