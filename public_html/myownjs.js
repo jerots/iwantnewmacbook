@@ -32,22 +32,33 @@ function newExpenseJSON(){
 	
 	
 	//WITHOUT STRINGIFY
-	var text =  '{ "expenses" : [' //+
+	//var text =  '{ "expenses" : [' +
 	//'{ "expense":"' + expenseName + '", "amount":"' + amt + '"}] }';
 	
 	//USING STRINGIFY
-	text += JSON.stringify({expense:expenseName, amount:amt});
-	text += ']}';
+	var text = localStorage.getItem('expenses');
+	if (text == null){
+		text =  '{ "expenses" : [';
+		text +=  JSON.stringify({expense:expenseName, amount:amt});
+	} else {
+		text += "," +  JSON.stringify({expense:expenseName, amount:amt});
+	}
+	//text += ']}';
 	//var obj = JSON.parse(text);
 	localStorage.setItem ('expenses', text);
-	
 	
 }
 
 function loadJSON(){
 	var text = localStorage.getItem('expenses');
-	var obj = JSON.parse(text);
-	$("article").append(obj.expenses[0].expense + ": " + obj.expenses[0].amount);
+	if (text != null){
+		text += ']}';
+		var obj = JSON.parse(text);
+		for (i = 0; i < obj.expenses.length; i++){
+			$("article").append(obj.expenses[i].expense + ": " + obj.expenses[i].amount);
+			$("article").append("<br>");
+		}
+	}
 }
 
 function load(){
