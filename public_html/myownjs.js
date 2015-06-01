@@ -8,7 +8,7 @@ $("#overlay").hide();
 
 
 $(document).ready(function() {
-	load();
+	loadJSON();
 	
 	$("#thebutton,#thesubmit").click(function(){
 		$("#dialog").slideToggle(300);
@@ -24,6 +24,30 @@ function newExpense(){
 	localStorage.setItem('expense' + expenseNum, expenseName);
 	localStorage.setItem('amount' + expenseNum, amount);
 	
+}
+
+function newExpenseJSON(){
+	var expenseName = document.getElementById("thefield").value;
+	var amt = document.getElementById("theamount").value;
+	
+	
+	//WITHOUT STRINGIFY
+	var text =  '{ "expenses" : [' //+
+	//'{ "expense":"' + expenseName + '", "amount":"' + amt + '"}] }';
+	
+	//USING STRINGIFY
+	text += JSON.stringify({expense:expenseName, amount:amt});
+	text += ']}';
+	//var obj = JSON.parse(text);
+	localStorage.setItem ('expenses', text);
+	
+	
+}
+
+function loadJSON(){
+	var text = localStorage.getItem('expenses');
+	var obj = JSON.parse(text);
+	$("article").append(obj.expenses[0].expense + ": " + obj.expenses[0].amount);
 }
 
 function load(){
