@@ -27,8 +27,8 @@ function newExpense(){
 }
 
 function newExpenseJSON(){
-	var expenseName = document.getElementById("thefield").value;
-	var amt = document.getElementById("theamount").value;
+	var expenseName = $("#thefield").val();
+	var amt = $("#theamount").val();
 	
 	
 	//WITHOUT STRINGIFY
