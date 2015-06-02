@@ -48,7 +48,7 @@ function newExpenseJSON(){
 	localStorage.setItem ('expenses', text);
 	//$("#article").load($(document.URL +  " #article"));
 	//window.setTimeout(countdown, 0);
-	
+	loadJSON();
 }
 
 function loadJSON(){
