@@ -26,7 +26,7 @@ function newExpense(){
 	data.push(obj);
 	var string = JSON.stringify(data);
 	localStorage.setItem('tracker', string);
-	loadJSON2();
+	load();
 	
 }
 
@@ -47,7 +47,9 @@ function load(){
 			html += "<tr>";
 			html += "<td>" + index + "</td>";
 			html += "<td>" + data[x].expense + "</td><td> $" + data[x].amount + "</td>";
-			html += '<td>Edit and Delete buttons coming soon</td>';
+			html += '<td><button type="button" class="btn btn-default" onclick="deleteRow('+index+')">';
+			html += '<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>';
+			html += '</button></td>';
 			html += "</tr>";
 			index++;
 		}
@@ -56,10 +58,14 @@ function load(){
 		$("article").html(html);
 		
 	}
+}
 		
+function deleteRow(index){
+	var data = JSON.parse(localStorage.getItem('tracker'));	
+	data.splice(index-1, 1);
 	
+	var string = JSON.stringify(data);
+	localStorage.setItem('tracker', string);
 	
-	
-	
-
+	load();
 }
