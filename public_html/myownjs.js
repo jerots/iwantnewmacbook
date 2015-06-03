@@ -11,7 +11,7 @@ $(document).ready(function() {
 	load();
 	$("#thebutton,#thesubmit").click(function(){
 		$("#dialog").slideToggle(300);
-		$("#overlay").toggle();
+		$("#overlay").fadeToggle();
 	});
 	
 });
@@ -21,7 +21,7 @@ function newExpense(){
 	var amt = $("#theamount").val();
 	
 	var data = JSON.parse(localStorage.getItem('tracker'));
-	//var data = [];
+	
 	var obj = {expense:expenseName,amount:amt};
 	data.push(obj);
 	var string = JSON.stringify(data);
