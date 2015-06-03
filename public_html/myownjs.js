@@ -36,22 +36,20 @@ function load(){
 		var data = [];
 		localStorage.setItem('tracker', JSON.stringify(data));
 	} else {
-		var index = 1;
+
 		var total = 0.0;
 		var html = '<table class="table table-striped table-bordered table-hover">';
 		html += '<tr><td>#</td><td>Expenses</td><td>Amount</td></tr>';
 		
 		for (x in data){
-			
 			total += parseFloat(data[x].amount);
 			html += "<tr>";
-			html += "<td>" + index + "</td>";
+			html += "<td>" + (x+1) + "</td>";
 			html += "<td>" + data[x].expense + "</td><td> $" + data[x].amount + "</td>";
-			html += '<td><button type="button" class="btn btn-default" onclick="deleteRow('+index+')">';
+			html += '<td><button type="button" class="btn btn-default" onclick="deleteRow('+ x +')">';
 			html += '<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>';
 			html += '</button></td>';
 			html += "</tr>";
-			index++;
 		}
 		html += '<tr><td>Total: </td><td></td><td>$' + total + '</td></tr>';
 		html += "</table>";
@@ -62,7 +60,7 @@ function load(){
 		
 function deleteRow(index){
 	var data = JSON.parse(localStorage.getItem('tracker'));	
-	data.splice(index-1, 1);
+	data.splice(index, 1);
 	
 	var string = JSON.stringify(data);
 	localStorage.setItem('tracker', string);
