@@ -19,29 +19,32 @@
     <![endif]-->
   </head>
   <body>
+	<div class="container-fluid">
+		<header class="row">
+			<div id="goalimg" class="col-md-12">
+				<img src="data/goal1.jpg" alt="the dream">
+			</div>
+			<input id="thebutton" type="button" value ="Add new expense" />
+			<div id="overlay" class="toLay"></div> 
+		</header>
 	  
-	 <header>
-		 
-		<img src="data/goal3.jpg" alt="the dream">
-		<input id="thebutton" type="button" value ="Add new expense" />
-		<div id="overlay" class="toLay"></div> 
-	  </header>
-	  <!-- <h1>50 days to get it...</h1> -->
-	  
-	  
-	<div id="dialog">
-			<h3>What have you spent on?</h3>
-			<input id="thefield" type="text" value ="e.g. McDonalds" />
-			<h3>How much did you spend on it?</h3>
-			<h3>$<input id="theamount" type="text" value ="8.70" /></h3>
+		<div class="row">
+			<div id="dialog">
+				<h3>What have you spent on?</h3>
+				<input id="thefield" type="text" value ="e.g. McDonalds" />
+				<h3>How much did you spend on it?</h3>
+				<h3>$<input id="theamount" type="text" value ="8.70" /></h3>
 
-			<input id="thesubmit" type="button" value ="submit expense" onclick="newExpense()" />
-			
-			
+				<input id="thesubmit" type="button" value ="submit expense" onclick="newExpense()" />
+
+
+			</div>
+			<div class="container-fluid col-md-1">
+				test
+			</div>
+			<article id="article" class="container-fluid col-md-11"></article>
+		</div>
 	</div>
-	  <aside><<<<----- MONTHS WILL BE HERE</aside>
-  <article id="article"></article>
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
