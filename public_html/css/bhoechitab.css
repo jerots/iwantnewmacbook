@@ -2,7 +2,7 @@
 /*  bhoechie tab */
 div.bhoechie-tab-container{
   z-index: 10;
-  background-color: #888888;
+  background-color: #ffffff;
   padding: 0 !important;
  // border-radius: 4px;
  // -moz-border-radius: 4px;
@@ -29,7 +29,7 @@ div.bhoechie-tab-menu div.list-group>a{
 }
 div.bhoechie-tab-menu div.list-group>a .glyphicon,
 div.bhoechie-tab-menu div.list-group>a .fa {
-  color: #4169E1;
+  color: #888888;
 }
 div.bhoechie-tab-menu div.list-group>a:first-child{
   border-top-right-radius: 0;
