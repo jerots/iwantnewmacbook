@@ -11,6 +11,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="myownstyle.css" rel="stylesheet">
 	<link href="css/bhoechitab.css" rel="stylesheet">
+	<link href="css/modalheadingcolour.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,10 +26,10 @@
 		<div id="myModal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
-					<div id="theheader">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearValues()"><span aria-hidden="true">&times;</span></button>
-       
-					</div>
+					<div id="theheader" class="modal-header modal-header-primary">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="clearValues()">×</button>
+                    <h1><i class="glyphicon glyphicon-plus"></i> New Expense</h1>
+                </div>
 					
 					<div class="modal-body">
 
@@ -116,8 +117,8 @@
                 <!-- train section -->
                 <div class="bhoechie-tab-content">
                     <center>
-						<h1 class="glyphicon glyphicon-fire" style="font-size:14em;color:#888888"></h1>
-						<h2 style="margin-top: 0;color:#888888">Work in Progress</h2>
+						<h1 class="glyphicon glyphicon-fire" style="font-size:14em;color:#428bca"></h1>
+						<h2 style="margin-top: 0;color:#428bca">Work in Progress</h2>
                       <article id="article"></article>
                     </center>
                 </div>
@@ -154,8 +155,6 @@
 			
 			<!-- END OF SIMPLE VERTICAL TAB -->
 			
-		</div>
-	</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
