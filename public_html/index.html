@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>SHUTUP AND TAKE MY MONEY</title>
+    <title>Take my money, Sir.</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +19,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body> <!-- START OF FLOATING/FIXED ELEMENTS -->
 	 
 	  
 		<div id="myModal" class="modal fade" role="dialog">
@@ -70,40 +70,38 @@
 
 		</div>
 		-->
-	  
+	
+	<!-- END OF FLOATING/FIXED ELEMENTS -->	
+		
+	<!-- MAIN GRID SYSTEM STARTS HERE	-->
+		
 	<div class="container-fluid">
 		<header class="row">
 			<div id="goalimg" class="col-md-12">
 				<img src="data/goal1.jpg" alt="the dream">
 			</div>
-			
-			
-			
-			
 		</header>
 	  
-		<div class="row">
+		<div id='mainrow' class="row">
 			
-			<div id="thebar" class="container-fluid col-md-3"><!-- required for floating -->
+			<div id="navbar" class="container-fluid col-md-3"><!-- required for floating -->
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs tabs-left">
-				  <li class="active"><a href="#home" data-toggle="tab">Overview</a></li>
-				  <li><a href="#profile" data-toggle="tab">June</a></li>
-				  <li><a href="#messages" data-toggle="tab">May</a></li>
-				  <li><a href="#settings" data-toggle="tab">April</a></li>
+				  <li class="active"><a href="#overview" data-toggle="tab">Overview</a></li>
+				  <li><a href="#first" data-toggle="tab">Records</a></li>
 				</ul>
 			</div>
 
 			<div class="col-xs-9">
 				<!-- Tab panes -->
 				<div class="tab-content">
-				  <div class="tab-pane active" id="home">
-					  <article id="article" class="col-md-8 col-md-offset-1"></article>
+				  <div class="tab-pane active" id="overview">
+					  Overview. Charts and bars will be here.
 				  
 				  </div>
-				  <div class="tab-pane" id="profile">June Tab.</div>
-				  <div class="tab-pane" id="messages">May Tab.</div>
-				  <div class="tab-pane" id="settings">April Tab.</div>
+				  <div class="tab-pane" id="first">
+				  <article id="article" class="col-md-8 col-md-offset-1"></article>
+				  </div>
 				</div>
 			</div>  
 			
