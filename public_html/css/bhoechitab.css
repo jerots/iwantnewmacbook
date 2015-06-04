@@ -42,8 +42,9 @@ div.bhoechie-tab-menu div.list-group>a:last-child{
 div.bhoechie-tab-menu div.list-group>a.active,
 div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
 div.bhoechie-tab-menu div.list-group>a.active .fa{
-  background-color: #4169E1;
-  background-image: #4169E1;
+  background-color: #888888;
+  border: solid thin;
+  //background-image: #888888;
   color: #ffffff;
 }
 div.bhoechie-tab-menu div.list-group>a.active:after{
@@ -52,10 +53,10 @@ div.bhoechie-tab-menu div.list-group>a.active:after{
   left: 100%;
   top: 50%;
   margin-top: -13px;
-  border-left: 0;
+  border-left: 0px;
   border-bottom: 13px solid transparent;
   border-top: 13px solid transparent;
-  border-left: 10px solid #4169E1;
+  border-left: 10px solid #888888;
 }
 
 div.bhoechie-tab-content{
@@ -67,13 +68,4 @@ div.bhoechie-tab-content{
 
 div.bhoechie-tab div.bhoechie-tab-content:not(.active){
   display: none;
-}/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Jun 4, 2015, 7:58:16 PM
-    Author     : jeremyongts92
-*/
-
+}
