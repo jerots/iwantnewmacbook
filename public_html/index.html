@@ -10,7 +10,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="myownstyle.css" rel="stylesheet">
-	<link href="css/bootstrap.vertical-tabs.min.css" rel="stylesheet">
+	<link href="css/bhoechitab.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -84,28 +84,77 @@
 	  
 		<div id='mainrow' class="row">
 			
-			<div id="navbar" class="container-fluid col-md-3"><!-- required for floating -->
-				<!-- Nav tabs -->
-				<ul class="nav nav-tabs tabs-left">
-				  <li class="active"><a href="#overview" data-toggle="tab">Overview</a></li>
-				  <li><a href="#first" data-toggle="tab">Records</a></li>
-				</ul>
-			</div>
-
-			<div class="col-xs-9">
-				<!-- Tab panes -->
-				<div class="tab-content">
-				  <div class="tab-pane active" id="overview">
-					  Overview. Charts and bars will be here.
-				  
-				  </div>
-				  <div class="tab-pane" id="first">
-				  <article id="article" class="col-md-8 col-md-offset-1"></article>
-				  </div>
-				</div>
-			</div>  
+			<!-- START OF SIMPLE VERTICAL TAB -->
+	<div class="row">
+        <div class="col-md-12 bhoechie-tab-container">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
+              <div class="list-group">
+                <a href="#" class="list-group-item active text-center">
+                  <h4 class="glyphicon glyphicon-stats"></h4><br/>Overview
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  <h4 class="glyphicon glyphicon-list"></h4><br/>June
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  <h4 class="glyphicon glyphicon-list"></h4><br/>May
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  <h4 class="glyphicon glyphicon-list"></h4><br/>April
+                </a>
+                <a href="#" class="list-group-item text-center">
+                  <h4 class="glyphicon glyphicon-list"></h4><br/>March
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+                <!-- flight section -->
+                <div class="bhoechie-tab-content active">
+                    <center>
+                      <h1 class="glyphicon glyphicon-stats" style="font-size:14em;color:#4169E1"></h1>
+                      <h2 style="margin-top: 0;color:#4169E1">Coming Soon</h2>
+                      <h3 style="margin-top: 0;color:#4169E1">Charts and Budget</h3>
+                    </center>
+                </div>
+                <!-- train section -->
+                <div class="bhoechie-tab-content">
+                    <center>
+						<h1 class="glyphicon glyphicon-fire" style="font-size:14em;color:#4169E1"></h1>
+						<h2 style="margin-top: 0;color:#4169E1">Work in Progress</h2>
+                      <article id="article"></article>
+                    </center>
+                </div>
+    
+                <!-- hotel search -->
+                <div class="bhoechie-tab-content">
+                    <center>
+                      <h1 class="glyphicon glyphicon-list" style="font-size:12em;color:#55518a"></h1>
+                      <h2 style="margin-top: 0;color:#55518a">Coming Soon</h2>
+                      <h3 style="margin-top: 0;color:#55518a">Monthly record</h3>
+                    </center>
+                </div>
+                <div class="bhoechie-tab-content">
+                    <center>
+                      <h1 class="glyphicon glyphicon-list" style="font-size:12em;color:#55518a"></h1>
+                      <h2 style="margin-top: 0;color:#55518a">Coming Soon</h2>
+                      <h3 style="margin-top: 0;color:#55518a">Monthly record</h3>
+                    </center>
+                </div>
+                <div class="bhoechie-tab-content">
+                    <center>
+                      <h1 class="glyphicon glyphicon-list" style="font-size:12em;color:#55518a"></h1>
+                      <h2 style="margin-top: 0;color:#55518a">Coming Soon</h2>
+                      <h3 style="margin-top: 0;color:#55518a">Monthly record</h3>
+                    </center>
+                </div>
+            </div>
+        </div>
+  </div>
+</div>
 			
 			
+				 
+			
+			<!-- END OF SIMPLE VERTICAL TAB -->
 			
 		</div>
 	</div>
