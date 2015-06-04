@@ -28,7 +28,7 @@ and open the template in the editor.
 
 .modal-content{
 	text-align: left;
-	padding: 7px;
+	//padding: 7px;
 	padding-top: 0px;
 }
 
@@ -105,4 +105,9 @@ img {
 }
 #article{
 	padding:20px;
+}
+
+.form-group{
+	
+	margin-top: 15px;
 }
