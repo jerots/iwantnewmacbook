@@ -8,14 +8,21 @@ $("#dialog").hide();
 
 $(document).ready(function() {
 	load();
+	
+	
+	
+	/*
 	$("#thebutton,#thesubmit").click(function(){
 		$("#dialog").slideToggle(300,function(){
 			//RESET VALUES AFTER DIALOG CLOSES
 			$("#thefield").val("");
 			$("#theamount").val("");
 		});
-		$("#dialog").focus();
-	});
+	});*/
+	
+	
+	
+	
 	
 });
 
@@ -47,18 +54,20 @@ function load(){
 	} else {
 
 		var total = 0.0;
-		var html = '<table class="table table-striped table-bordered table-hover">';
+		var html = '<table class="table table-striped table-bordered table-hover table-condensed">';
 		html += '<tr><td>#</td><td>Expenses</td><td>Amount</td></tr>';
-		
+		var index = 1;
 		for (x in data){
+			
 			total += parseFloat(data[x].amount);
 			html += "<tr>";
-			html += "<td>" + (x+1) + "</td>";
+			html += "<td>" + index + "</td>";
 			html += "<td>" + data[x].expense + "</td><td> $" + data[x].amount + "</td>";
-			html += '<td><button type="button" class="btn btn-default" onclick="deleteRow('+ x +')">';
+			html += '<td><button type="button" class="btn btn-default btn-sm" onclick="deleteRow('+ x +')">';
 			html += '<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>';
 			html += '</button></td>';
 			html += "</tr>";
+			index++;
 		}
 		html += '<tr><td>Total: </td><td></td><td>$' + total + '</td></tr>';
 		html += "</table>";
