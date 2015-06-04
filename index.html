@@ -9,7 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/myownstyle.css" rel="stylesheet">
+	<link href="myownstyle.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,23 +21,31 @@
   <body>
 	  
 	 <header>
-		  
+		 
 		<img src="data/goal3.jpg" alt="the dream">
-		  <input id="thebutton" type="button" value ="Add new expense" />
+		<input id="thebutton" type="button" value ="Add new expense" />
+		<div id="overlay" class="toLay"></div> 
 	  </header>
 	  <!-- <h1>50 days to get it...</h1> -->
 	  
-	<dialog open>
-		<h3>Enter your expenses here: ________________</h3>
-	</dialog>
-  <article>
-	  ALL THE RECORDS WILL BE DISPLAYED BELOW, with tabs for each month
-  </article>
+	  
+	<div id="dialog">
+			<h3>What have you spent on?</h3>
+			<input id="thefield" type="text" value ="e.g. McDonalds" />
+			<h3>How much did you spend on it?</h3>
+			<h3>$<input id="theamount" type="text" value ="8.70" /></h3>
+
+			<input id="thesubmit" type="button" value ="submit expense" onclick="newExpenseJSON()" />
+			
+			
+	</div>
+	  <aside><<<<----- MONTHS WILL BE HERE</aside>
+  <article id="article"></article>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-	<script src="js/myownjs.js"></script>
+	<script src="myownjs.js"></script>
   </body>
 </html>
