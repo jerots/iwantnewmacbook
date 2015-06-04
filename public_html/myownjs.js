@@ -4,21 +4,28 @@
  * and open the template in the editor.
  */
 $("#dialog").hide();
-$("#overlay").hide();
 
 
 $(document).ready(function() {
 	load();
 	$("#thebutton,#thesubmit").click(function(){
-		$("#dialog").slideToggle(300);
-		$("#overlay").fadeToggle();
+		$("#dialog").slideToggle(300,function(){
+			//RESET VALUES AFTER DIALOG CLOSES
+			$("#thefield").val("");
+			$("#theamount").val("");
+		});
+		$("#dialog").focus();
 	});
 	
 });
+
+
 function newExpense(){
 	
 	var expenseName = $("#thefield").val();
 	var amt = $("#theamount").val();
+	
+	
 	
 	var data = JSON.parse(localStorage.getItem('tracker'));
 	
@@ -26,7 +33,9 @@ function newExpense(){
 	data.push(obj);
 	var string = JSON.stringify(data);
 	localStorage.setItem('tracker', string);
+	
 	load();
+	
 	
 }
 

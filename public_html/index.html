@@ -19,6 +19,20 @@
     <![endif]-->
   </head>
   <body>
+	 
+	  
+		<div id="dialog">
+			<h3>What have you spent on?</h3>
+			<input id="thefield" type="text" placeholder ="e.g. McDonalds" />
+			<h3>How much did you spend on it?</h3>
+			<h3>$ <input id="theamount" type="text" placeholder ="0.00" /></h3>
+
+			<input id="thesubmit" class="btn btn-primary" type="button" value ="submit expense" onclick="newExpense()" />
+
+
+		</div>
+		<input id="thebutton" class="btn btn-default" type="button" value ="Add new expense" />
+	  
 	<div class="container-fluid">
 		<header class="row">
 			<div id="goalimg" class="col-md-12">
@@ -26,21 +40,12 @@
 			</div>
 			
 			
-			<input id="thebutton" class="btn btn-default" type="button" value ="Add new expense" />
-			<div id="overlay" class="toLay"></div>
+			
+			
 		</header>
 	  
 		<div class="row">
-			<div id="dialog">
-				<h3>What have you spent on?</h3>
-				<input id="thefield" type="text" value ="e.g. McDonalds" />
-				<h3>How much did you spend on it?</h3>
-				<h3>$<input id="theamount" type="text" value ="8.70" /></h3>
-
-				<input id="thesubmit" class="btn btn-primary" type="button" value ="submit expense" onclick="newExpense()" />
-
-
-			</div>
+			
 			<div class="container-fluid col-md-2">
 				test
 			</div>
