@@ -40,9 +40,17 @@ function newExpense(){
 	data.push(obj);
 	var string = JSON.stringify(data);
 	localStorage.setItem('tracker', string);
-	
+	clearValues();
 	load();
 	
+	
+}
+
+function clearValues(){
+	setTimeout(function(){
+		$("#thefield").val("");
+		$("#theamount").val("");
+	}, 800)
 	
 }
 

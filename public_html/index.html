@@ -24,21 +24,30 @@
 		<div id="myModal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
+					<div id="theheader">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearValues()"><span aria-hidden="true">&times;</span></button>
+       
+					</div>
 					
 					<div class="modal-body">
-						<form class="form-inline">
+
+						<form>
 							<div class="form-group">
-								<h3>What have you spent on?</h3>
-								<input id="thefield" class="form-control" type="text" placeholder ="e.g. McDonalds" />
+									<label for="thefield">What did you spend on?</label>
+									<input id="thefield" class="form-control input-lg" type="text" placeholder ="e.g. McDonalds" />
 							</div>
 							<div class="form-group">
-							<h3>How much did you spend on it?</h3>
-								<h3>$ <input id="theamount" class="form-control" type="text" placeholder ="0.00" /></h3>
+
+									<label for="theamount">How much did you spend on it?</label>
+									<div class="input-group">
+										<div class="input-group-addon">$</div>
+										<input id="theamount" class="form-control input-lg" type="text" placeholder ="0.00" />
+									</div>
 							</div>
 						</form>
+						
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						<button type="button" class="btn btn-primary" onclick="newExpense()" data-dismiss="modal">Submit</button>
 					</div>
 				</div><!-- /.modal-content -->
@@ -48,7 +57,7 @@
 	  
 		<input id="thebutton" class="btn btn-default" type="button" data-toggle="modal"
 			data-target="#myModal" value ="Add new expense" />
-	  
+		<!--
 		<div id="dialog">
 			<h3>What have you spent on?</h3>
 			<input id="thefield" type="text" placeholder ="e.g. McDonalds" />
@@ -56,7 +65,7 @@
 			<h3>$ <input id="theamount" type="text" placeholder ="0.00" /></h3>
 
 			<input id="thesubmit" class="btn btn-primary" type="button" value ="submit expense" onclick="newExpense()" />
-
+		-->
 
 		</div>
 		
