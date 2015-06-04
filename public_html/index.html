@@ -10,6 +10,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="myownstyle.css" rel="stylesheet">
+	<link href="css/bootstrap.vertical-tabs.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -83,10 +84,31 @@
 	  
 		<div class="row">
 			
-			<div id="thebar" class="container-fluid col-md-2">
-				Months here
+			<div id="thebar" class="container-fluid col-md-3"><!-- required for floating -->
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs tabs-left">
+				  <li class="active"><a href="#home" data-toggle="tab">Overview</a></li>
+				  <li><a href="#profile" data-toggle="tab">June</a></li>
+				  <li><a href="#messages" data-toggle="tab">May</a></li>
+				  <li><a href="#settings" data-toggle="tab">April</a></li>
+				</ul>
 			</div>
-			<article id="article" class="col-md-8 col-md-offset-1"></article>
+
+			<div class="col-xs-9">
+				<!-- Tab panes -->
+				<div class="tab-content">
+				  <div class="tab-pane active" id="home">
+					  <article id="article" class="col-md-8 col-md-offset-1"></article>
+				  
+				  </div>
+				  <div class="tab-pane" id="profile">June Tab.</div>
+				  <div class="tab-pane" id="messages">May Tab.</div>
+				  <div class="tab-pane" id="settings">April Tab.</div>
+				</div>
+			</div>  
+			
+			
+			
 		</div>
 	</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

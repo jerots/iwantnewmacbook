@@ -66,18 +66,18 @@ function load(){
 		html += '<tr><td>#</td><td>Expenses</td><td>Amount</td><td>Remove</td></tr>';
 		var index = 1;
 		for (x in data){
-			
-			total += parseFloat(data[x].amount);
+			var currAmt = parseFloat(data[x].amount)
+			total += currAmt
 			html += '<tr>';
 			html += "<td>" + index + "</td>";
-			html += "<td>" + data[x].expense + "</td><td> $" + data[x].amount + "</td>";
+			html += "<td>" + data[x].expense + "</td><td> $" + currAmt.toFixed(2) + "</td>";
 			html += '<td class="buttoncol"><button type="button" id="removebutton" class="btn btn-default btn-sm" onclick="deleteRow('+ x +')">';
 			html += '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>';
 			html += '</button>';
 			html += "</tr>";
 			index++;
 		}
-		html += '<tr><td>Total: </td><td></td><td>$' + total + '</td></tr>';
+		html += '<tr><td>Total: </td><td></td><td>$' + total.toFixed(2) + '</td></tr>';
 		html += "</table>";
 		$("article").html(html);
 		
