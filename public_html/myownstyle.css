@@ -8,6 +8,25 @@ and open the template in the editor.
     Author     : jeremyongts92
 */
 
+.modal {
+  text-align: center;
+}
+
+.modal:before {
+  display: inline-block;
+  vertical-align: middle;
+  content: " ";
+  height: 100%;
+}
+
+.modal-dialog {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.modal-content{
+	text-align: left;
+}
 
 img {
 	width: 100%;
