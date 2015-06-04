@@ -62,18 +62,18 @@ function load(){
 	} else {
 
 		var total = 0.0;
-		var html = '<table class="table table-striped table-bordered table-hover table-condensed">';
-		html += '<tr><td>#</td><td>Expenses</td><td>Amount</td></tr>';
+		var html = '<table id="historytable" class="table table-striped table-condensed">';
+		html += '<tr><td>#</td><td>Expenses</td><td>Amount</td><td>Remove</td></tr>';
 		var index = 1;
 		for (x in data){
 			
 			total += parseFloat(data[x].amount);
-			html += "<tr>";
+			html += '<tr>';
 			html += "<td>" + index + "</td>";
 			html += "<td>" + data[x].expense + "</td><td> $" + data[x].amount + "</td>";
-			html += '<td><button type="button" class="btn btn-default btn-sm" onclick="deleteRow('+ x +')">';
-			html += '<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>';
-			html += '</button></td>';
+			html += '<td class="buttoncol"><button type="button" id="removebutton" class="btn btn-default btn-sm" onclick="deleteRow('+ x +')">';
+			html += '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>';
+			html += '</button>';
 			html += "</tr>";
 			index++;
 		}
