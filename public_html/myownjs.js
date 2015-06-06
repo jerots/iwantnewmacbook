@@ -4,10 +4,31 @@
  * and open the template in the editor.
  */
 $("#dialog").hide();
-
+var template ='';
 
 $(document).ready(function() {
+	
+	Handlebars.registerHelper('amountFixed', function(amt){
+		var amount = Number(amt);
+		return amount.toFixed(2);
+	});
+	
+	Handlebars.registerHelper('indexPlus', function(ind){
+		return ind + 1;
+	});
+	
+	Handlebars.registerHelper('calTotal', function(expenses){
+		
+		var total = 0;
+		for (x in expenses){
+			total += Number(expenses[x].amount);
+		}
+		return total.toFixed(2);
+	});
+	
 	load();
+	compileTemplate();
+	load2();
 	
 	$("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
         e.preventDefault();
@@ -49,7 +70,7 @@ function newExpense(){
 	localStorage.setItem('tracker', string);
 	clearValues();
 	load();
-	
+	load2();
 	
 }
 
@@ -58,6 +79,28 @@ function clearValues(){
 		$("#thefield").val("");
 		$("#theamount").val("");
 	}, 800)
+	
+}
+
+function compileTemplate(){
+	var thehtml = $('#records').html();
+	template = Handlebars.compile(thehtml);
+	
+}
+
+function load2(){
+	
+	var data = JSON.parse(localStorage.getItem('tracker'));
+	if (data === null){
+		var data = [];
+		localStorage.setItem('tracker', JSON.stringify(data));
+	} else {
+		
+		
+		var temp = template(data);
+		$("#articles").html(temp);
+	}
+	
 	
 }
 
@@ -79,8 +122,8 @@ function load(){
 			html += "<td>" + index + "</td>";
 			html += "<td>" + data[x].expense + "</td><td> $" + currAmt.toFixed(2) + "</td>";
 			html += '<td class="buttoncol"><button type="button" id="removebutton" class="btn btn-default btn-sm" onclick="deleteRow('+ x +')">';
-			html += '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>';
-			html += '</button>';
+			html += '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>';
+			html += '</button></td>';
 			html += "</tr>";
 			index++;
 		}
@@ -99,4 +142,6 @@ function deleteRow(index){
 	localStorage.setItem('tracker', string);
 	
 	load();
+	load2();
 }
+
