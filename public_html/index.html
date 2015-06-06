@@ -102,6 +102,9 @@
                       <h1 class="glyphicon glyphicon-stats" style="font-size:14em;color:#888888"></h1>
                       <h2 style="margin-top: 0;color:#888888">Coming Soon</h2>
                       <h3 style="margin-top: 0;color:#888888">Charts and Budget</h3>
+					  hi
+					  <canvas id="charts"> </canvas>
+					  hi
                     </center>
                 </div>
  
@@ -112,11 +115,11 @@
 						<div id="articles">
 							<script id="records" type="text/x-handlebars-template">
 								<table id="historytable" class="table table-striped table-condensed">
-									<tr><td>#</td><td>Expenses</td><td>Amount</td><td>Remove</td></tr>
+									<tr><td><h5>#</td><td><h5>Date</td><td><h5>Expenses</td><td><h5>Amount</td><td><h5>Remove</td></tr>
 									
 									{{#each this}}
 									<tr>
-										<td>{{indexPlus @index}}</td><td>{{expense}}</td><td>${{amountFixed amount}}</td>
+										<td>{{indexPlus @index}}</td><td>{{dateDisp date}}</td><td>{{expense}}</td><td>${{amountFixed amount}}</td>
 										<td class="buttoncol">
 
 											<button type="button" id="removebutton" onclick="deleteRow({{@index}})" class="btn btn-default btn-sm">
@@ -126,7 +129,7 @@
 										</td>
 									</tr>
 									{{/each}}
-									<tr><td>Total: </td><td></td><td>${{calTotal this}}</td></tr>
+									<tr><td><h4>Total: </h4></td><td></td><td></td><td><h4>${{calTotal this}}</h4></td><td></td></tr>
 									
 							</script>
 					  </div>
@@ -167,6 +170,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
 	<script src="myownjs.js"></script>
+	<script src="js/Chart.min.js"></script>
 	<script src="js/handlebars-v3.0.3.js"></script>
 
   </body>
