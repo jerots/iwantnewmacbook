@@ -11,19 +11,17 @@ $(document).ready(function() {
 		var amount = Number(amt);
 		return amount.toFixed(2);
 	});
-	
 	Handlebars.registerHelper('indexPlus', function(ind){
 		return ind + 1;
 	});
-	
 	Handlebars.registerHelper('calTotal', function(expenses){
-		
 		var total = 0;
 		for (x in expenses){
 			total += Number(expenses[x].amount);
 		}
 		return total.toFixed(2);
 	});
+	
 	compileTemplate();
 	load();
 	
@@ -42,9 +40,7 @@ function newExpense(){
 	
 	var expenseName = $("#thefield").val();
 	var amt = $("#theamount").val();
-	
-	
-	
+
 	var data = JSON.parse(localStorage.getItem('tracker'));
 	
 	var obj = {expense:expenseName,amount:amt};
@@ -53,37 +49,29 @@ function newExpense(){
 	localStorage.setItem('tracker', string);
 	clearValues();
 	load();
-	
 }
 
 function clearValues(){
 	setTimeout(function(){
 		$("#thefield").val("");
 		$("#theamount").val("");
-	}, 800)
-	
+	}, 800);
 }
 
 function compileTemplate(){
 	var thehtml = $('#records').html();
 	template = Handlebars.compile(thehtml);
-	
 }
 
 function load(){
-	
 	var data = JSON.parse(localStorage.getItem('tracker'));
 	if (data === null){
 		var data = [];
 		localStorage.setItem('tracker', JSON.stringify(data));
 	} else {
-		
-		
 		var temp = template(data);
 		$("#articles").html(temp);
 	}
-	
-	
 }
 		
 function deleteRow(index){
