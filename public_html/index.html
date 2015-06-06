@@ -120,7 +120,27 @@
                     <center>
 						<h1 class="glyphicon glyphicon-fire" style="font-size:14em;color:#428bca"></h1>
 						<h2 style="margin-top: 0;color:#428bca">Work in Progress</h2>
-						<article id="article"></article>
+						<div id="articles">
+							<script id="records" type="text/x-handlebars-template">
+								<table id="historytable" class="table table-striped table-condensed">
+									<tr><td>#</td><td>Expenses</td><td>Amount</td><td>Remove</td></tr>
+									
+									{{#each this}}
+									<tr>
+										<td>{{indexPlus @index}}</td><td>{{expense}}</td><td>${{amountFixed amount}}</td>
+										<td class="buttoncol">
+
+											<button type="button" id="removebutton" onclick="deleteRow({{@index}})" class="btn btn-default btn-sm">
+											<span class="glyphicon glyphicon-remove" aria-hidden="true">
+											</span>
+											</button>
+										</td>
+									</tr>
+									{{/each}}
+									<tr><td>Total: </td><td></td><td>${{calTotal this}}</td></tr>
+									
+							</script>
+					  </div>
                     </center>
                 </div>
     
@@ -144,27 +164,7 @@
                       <h1 class="glyphicon glyphicon-list" style="font-size:12em;color:#888888"></h1>
                       <h2 style="margin-top: 0;color:#888888">Coming Soon</h2>
                       <h3 style="margin-top: 0;color:#888888">Monthly record</h3>
-					  <div id="articles">
-							<script id="records" type="text/x-handlebars-template">
-								<table id="historytable" class="table table-striped table-condensed">
-									<tr><td>#</td><td>Expenses</td><td>Amount</td><td>Remove</td></tr>
-									
-									{{#each this}}
-									<tr>
-										<td>{{indexPlus @index}}</td><td>{{expense}}</td><td>${{amountFixed amount}}</td>
-										<td class="buttoncol">
-
-											<button type="button" id="removebutton" onclick="deleteRow({{@index}})" class="btn btn-default btn-sm">
-											<span class="glyphicon glyphicon-remove" aria-hidden="true">
-											</span>
-											</button>
-										</td>
-									</tr>
-									{{/each}}
-									<tr><td>Total: </td><td></td><td>${{calTotal this}}</td></tr>
-									
-							</script>
-					  </div>
+					  
                     </center>
                 </div>
             </div>

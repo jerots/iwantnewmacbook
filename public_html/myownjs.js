@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$("#dialog").hide();
 var template ='';
 
 $(document).ready(function() {
@@ -25,10 +24,8 @@ $(document).ready(function() {
 		}
 		return total.toFixed(2);
 	});
-	
-	load();
 	compileTemplate();
-	load2();
+	load();
 	
 	$("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
         e.preventDefault();
@@ -38,20 +35,6 @@ $(document).ready(function() {
         $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
         $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
     });
-	
-	/*
-	$("#thebutton,#thesubmit").click(function(){
-		$("#dialog").slideToggle(300,function(){
-			//RESET VALUES AFTER DIALOG CLOSES
-			$("#thefield").val("");
-			$("#theamount").val("");
-		});
-	});*/
-	
-	
-	
-	
-	
 });
 
 
@@ -70,7 +53,6 @@ function newExpense(){
 	localStorage.setItem('tracker', string);
 	clearValues();
 	load();
-	load2();
 	
 }
 
@@ -88,7 +70,7 @@ function compileTemplate(){
 	
 }
 
-function load2(){
+function load(){
 	
 	var data = JSON.parse(localStorage.getItem('tracker'));
 	if (data === null){
@@ -103,36 +85,6 @@ function load2(){
 	
 	
 }
-
-function load(){
-	var data = JSON.parse(localStorage.getItem('tracker'));
-	if (data == null){
-		var data = [];
-		localStorage.setItem('tracker', JSON.stringify(data));
-	} else {
-
-		var total = 0.0;
-		var html = '<table id="historytable" class="table table-striped table-condensed">';
-		html += '<tr><td>#</td><td>Expenses</td><td>Amount</td><td>Remove</td></tr>';
-		var index = 1;
-		for (x in data){
-			var currAmt = parseFloat(data[x].amount)
-			total += currAmt
-			html += '<tr>';
-			html += "<td>" + index + "</td>";
-			html += "<td>" + data[x].expense + "</td><td> $" + currAmt.toFixed(2) + "</td>";
-			html += '<td class="buttoncol"><button type="button" id="removebutton" class="btn btn-default btn-sm" onclick="deleteRow('+ x +')">';
-			html += '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>';
-			html += '</button></td>';
-			html += "</tr>";
-			index++;
-		}
-		html += '<tr><td>Total: </td><td></td><td>$' + total.toFixed(2) + '</td></tr>';
-		html += "</table>";
-		$("article").html(html);
-		
-	}
-}
 		
 function deleteRow(index){
 	var data = JSON.parse(localStorage.getItem('tracker'));	
@@ -142,6 +94,5 @@ function deleteRow(index){
 	localStorage.setItem('tracker', string);
 	
 	load();
-	load2();
 }
 
