@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+	<link rel="icon" type="image/png" href="data/favicon4">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,18 +60,7 @@
 	  
 		<input id="thebutton" class="btn btn-default" type="button" data-toggle="modal"
 			data-target="#myModal" value ="Add new expense" />
-		<!--
-		<div id="dialog">
-			<h3>What have you spent on?</h3>
-			<input id="thefield" type="text" placeholder ="e.g. McDonalds" />
-			<h3>How much did you spend on it?</h3>
-			<h3>$ <input id="theamount" type="text" placeholder ="0.00" /></h3>
 
-			<input id="thesubmit" class="btn btn-primary" type="button" value ="submit expense" onclick="newExpense()" />
-		
-
-		</div>
-		-->
 	
 	<!-- END OF FLOATING/FIXED ELEMENTS -->	
 		
@@ -83,7 +73,7 @@
 			</div>
 		</header>
 	  		
-			<!-- START OF SIMPLE VERTICAL TAB -->
+			<!-- START OF VERTICAL TAB -->
 	<div class="row">
         <div class="col-md-12 bhoechie-tab-container">
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
@@ -106,7 +96,7 @@
               </div>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
-                <!-- flight section -->
+
                 <div class="bhoechie-tab-content active">
                     <center>
                       <h1 class="glyphicon glyphicon-stats" style="font-size:14em;color:#888888"></h1>
@@ -114,16 +104,36 @@
                       <h3 style="margin-top: 0;color:#888888">Charts and Budget</h3>
                     </center>
                 </div>
-                <!-- train section -->
+ 
                 <div class="bhoechie-tab-content">
                     <center>
 						<h1 class="glyphicon glyphicon-fire" style="font-size:14em;color:#428bca"></h1>
 						<h2 style="margin-top: 0;color:#428bca">Work in Progress</h2>
-                      <article id="article"></article>
+						<div id="articles">
+							<script id="records" type="text/x-handlebars-template">
+								<table id="historytable" class="table table-striped table-condensed">
+									<tr><td>#</td><td>Expenses</td><td>Amount</td><td>Remove</td></tr>
+									
+									{{#each this}}
+									<tr>
+										<td>{{indexPlus @index}}</td><td>{{expense}}</td><td>${{amountFixed amount}}</td>
+										<td class="buttoncol">
+
+											<button type="button" id="removebutton" onclick="deleteRow({{@index}})" class="btn btn-default btn-sm">
+											<span class="glyphicon glyphicon-remove" aria-hidden="true">
+											</span>
+											</button>
+										</td>
+									</tr>
+									{{/each}}
+									<tr><td>Total: </td><td></td><td>${{calTotal this}}</td></tr>
+									
+							</script>
+					  </div>
                     </center>
                 </div>
     
-                <!-- hotel search -->
+                
                 <div class="bhoechie-tab-content">
                     <center>
                       <h1 class="glyphicon glyphicon-list" style="font-size:12em;color:#888888"></h1>
@@ -143,22 +153,21 @@
                       <h1 class="glyphicon glyphicon-list" style="font-size:12em;color:#888888"></h1>
                       <h2 style="margin-top: 0;color:#888888">Coming Soon</h2>
                       <h3 style="margin-top: 0;color:#888888">Monthly record</h3>
+					  
                     </center>
                 </div>
             </div>
         </div>
   </div>
 </div>
-			
-			
-				 
-			
-			<!-- END OF SIMPLE VERTICAL TAB -->
+			<!-- END OF VERTICAL TAB -->
 			
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
 	<script src="myownjs.js"></script>
+	<script src="js/handlebars-v3.0.3.js"></script>
+
   </body>
 </html>

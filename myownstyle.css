@@ -36,11 +36,6 @@ and open the template in the editor.
 	margin-top: 15px;
 }
 
-#theheader{
-	padding-top: 10px;
-	padding-right: 13px;
-	padding-bottom: 18px;
-}
 
 img {
 	width: 100%;
@@ -65,31 +60,6 @@ img {
 	
 }
 
-/*
-#dialog{
-	background-color: whitesmoke;
-	position: fixed;
-	left: 50%;
-	margin-left: -250px;
-	right: 50%;
-	top: 20%;
-	opacity: 0.95;
-	z-index: 3;
-	
-	padding: 15px;
-	border:solid black;
-	width: 500px;
-
-}
-
-
-#thesubmit{
-
-	padding: 10px;
-	margin: 20px 160px auto;
-}*/
-
-
 .buttoncol{
 	width: 70px;
 	
@@ -101,10 +71,7 @@ img {
 
 #historytable{
 	margin: 10px;
-	width: 80%;
-}
-#article{
-	padding:20px;
+	width: 60%;
 }
 
 .form-group{
