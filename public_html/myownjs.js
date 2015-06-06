@@ -9,9 +9,9 @@ $(document).ready(function() {
 	
 	Handlebars.registerHelper('dateDisp', function(date){
 		var thedate = new Date(date);
-		
-		//don't know why date is displayed as May when it's June now, hence the +1
-		var toReturn = "" + thedate.getDate() +"/"+ (thedate.getMonth()+1) +"/"+ thedate.getFullYear();
+		var locale = 'en-us';
+		var month = thedate.toLocaleString(locale, { month: "long" });
+		var toReturn = "" + thedate.getDate() +" "+ month +" "+ thedate.getFullYear();
 		return toReturn;
 	});
 	
@@ -58,6 +58,7 @@ function newExpense(){
 	localStorage.setItem('tracker', string);
 	clearValues();
 	load();
+	loadChart();
 }
 
 function clearValues(){
@@ -91,36 +92,55 @@ function deleteRow(index){
 	localStorage.setItem('tracker', string);
 	
 	load();
+	loadChart();
 }
 
 function loadChart(){
 	
-	var data = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+	var budget = 200;
+	var toShow = {
+    labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
     datasets: [
         {
-            label: "My First dataset",
+            label: "Actual spending",
             fillColor: "rgba(220,220,220,0.5)",
             strokeColor: "rgba(220,220,220,0.8)",
             highlightFill: "rgba(220,220,220,0.75)",
             highlightStroke: "rgba(220,220,220,1)",
-            data: [65, 59, 80, 81, 56, 55, 40]
+            data: [0,0,0,0,0,0,0,0,0,0,0,0]
         },
         {
-            label: "My Second dataset",
+            label: "Budget",
             fillColor: "rgba(151,187,205,0.5)",
             strokeColor: "rgba(151,187,205,0.8)",
             highlightFill: "rgba(151,187,205,0.75)",
             highlightStroke: "rgba(151,187,205,1)",
-            data: [28, 48, 40, 19, 86, 27, 90]
+            data: [budget,budget,budget,budget,budget,budget,budget,budget,budget,budget,budget,budget]
         }
     ]
 };
 	
+	var data = JSON.parse(localStorage.getItem('tracker'));
+	
+	
+		
+	for (x in data){
+		var currDate = new Date(data[x].date);
+		var currMonth = currDate.getMonth();
+		var currAmt = data[x].amount;
+		toShow.datasets[0].data[currMonth-1] += Number(currAmt);
+
+	}
+			
+		
+		
+
+	
+	
 	// Get context with jQuery - using jQuery's .get() method.
 	var ctx = $("#charts").get(0).getContext("2d");
 	// This will get the first returned node in the jQuery collection.
-	var myNewChart = new Chart(ctx).Bar(data,Chart.defaults.Bar);
+	var myNewChart = new Chart(ctx).Bar(toShow,Chart.defaults.Bar);
 	
 	
 	
