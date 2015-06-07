@@ -32,6 +32,7 @@ $(document).ready(function() {
 	
 	compileTemplate();
 	load();
+	//load2();
 	loadChart();
 	
 	$("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
@@ -51,11 +52,41 @@ function newExpense(){
 	var amt = $("#theamount").val();
 
 	var data = JSON.parse(localStorage.getItem('tracker'));
+	var date = new Date();
 	
-	var obj = {expense:expenseName,amount:amt,date:new Date()};
+	var obj = {expense:expenseName,amount:amt,date:date};
+	
 	data.push(obj);
 	var string = JSON.stringify(data);
 	localStorage.setItem('tracker', string);
+	clearValues();
+	load();
+	loadChart();
+}
+
+function newExpense2(){
+	var expenseName = $("#thefield").val();
+	var amt = $("#theamount").val();
+
+	var data = JSON.parse(localStorage.getItem('expenses'));
+	
+	var date = new Date();
+	var month = date.toLocaleString('en-us', { month: "long" });
+	var dateStore = (month + date.getFullYear());
+	
+	var mthObj = data[dateStore];
+	if (mthObj == undefined){
+		mthObj = {
+			budget: 500,
+			record: []
+		};
+	} 
+	var obj = {expense:expenseName,amount:amt,date:date};
+	mthObj.record.push(obj);
+	data[dateStore] = mthObj;
+	localStorage.setItem('expenses', JSON.stringify(data));
+	
+	
 	clearValues();
 	load();
 	loadChart();
@@ -82,6 +113,19 @@ function load(){
 		var temp = template(data);
 		$("#articles").html(temp);
 	}
+}
+
+function load2(){
+	
+	var data = JSON.parse(localStorage.getItem('expenses'));
+	if (data === null){
+		var data = {};
+		localStorage.setItem('expenses', JSON.stringify(data));
+	} else {
+		var temp = template(data);
+		$("#articles").html(temp);
+	}
+	
 }
 		
 function deleteRow(index){
