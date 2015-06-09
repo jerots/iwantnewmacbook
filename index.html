@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-	<link rel="icon" type="image/png" href="public_html/data/favicon4">
+	<link rel="icon" type="public_html/image.png" href="data/favicon4">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -69,7 +69,7 @@
 	<div class="container-fluid">
 		<header class="row">
 			<div id="goalimg" class="col-md-12">
-				<img src="public_html/data/blankmacbook.png" alt="the dream">
+				<img src="public_html/data/minny2.jpg" alt="the dream">
 			</div>
 		</header>
 	  		
@@ -99,9 +99,13 @@
 
                 <div class="bhoechie-tab-content active">
                     <center>
-                      <h1 class="glyphicon glyphicon-stats" style="font-size:14em;color:#888888"></h1>
-                      <h2 style="margin-top: 0;color:#888888">Coming Soon</h2>
-                      <h3 style="margin-top: 0;color:#888888">Charts and Budget</h3>
+                      
+
+                      <h2 style="margin-top: 0;color:#888888">Charts and Budget</h2>
+					
+					  <h4>Monthly Actual Spending vs Budget</h4>
+					  <canvas id="charts" class="canvases"> </canvas>
+					  
                     </center>
                 </div>
  
@@ -112,11 +116,11 @@
 						<div id="articles">
 							<script id="records" type="text/x-handlebars-template">
 								<table id="historytable" class="table table-striped table-condensed">
-									<tr><td>#</td><td>Expenses</td><td>Amount</td><td>Remove</td></tr>
+									<tr><th>#</th><th>Date</th><th>Expenses</th><th>Amount</th><th>Remove</th></tr>
 									
 									{{#each this}}
 									<tr>
-										<td>{{indexPlus @index}}</td><td>{{expense}}</td><td>${{amountFixed amount}}</td>
+										<td>{{indexPlus @index}}</td><td>{{dateDisp date}}</td><td>{{expense}}</td><td>${{amountFixed amount}}</td>
 										<td class="buttoncol">
 
 											<button type="button" id="removebutton" onclick="deleteRow({{@index}})" class="btn btn-default btn-sm">
@@ -126,7 +130,7 @@
 										</td>
 									</tr>
 									{{/each}}
-									<tr><td>Total: </td><td></td><td>${{calTotal this}}</td></tr>
+									<tr><td><h4>Total: </h4></td><td></td><td></td><td><h4>${{calTotal this}}</h4></td><td></td></tr>
 									
 							</script>
 					  </div>
@@ -163,11 +167,13 @@
 			<!-- END OF VERTICAL TAB -->
 			
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="public_html/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="public_html/js/bootstrap.min.js"></script>
-	<script src="myownjs.js"></script>
+	<script src="public_html/js/Chart.min.js"></script>
 	<script src="public_html/js/handlebars-v3.0.3.js"></script>
+	<script src="public_html/js/jqmeter.min.js"></script>
+	<script src="myownjs.js"></script>
 
   </body>
 </html>
